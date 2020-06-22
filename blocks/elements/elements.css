@@ -10,24 +10,21 @@
     margin: 47.25px auto 0;
     grid-template-columns: repeat(auto-fit, 282px);
     grid-gap: 21px 18px;
+    list-style-type: none;
+    list-style-position: outside;
+    padding-left: 0px;
 }
 
-@media screen and (max-width: 1000px) {
-    .elements {
-        margin: 0 auto;
-}
-    }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 901px) {
     .elements {
-        margin: 0 auto;
         max-width: 582px;
 }
     }
 
 @media screen and (max-width: 685px) {
     .elements {
-        margin: 0 auto;
         max-width: 282px;
+        margin: auto;
 }
     } 

@@ -19,10 +19,8 @@ function popupClose() {
 
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
-    inputName.getAttribute('value');
-    inputJob.getAttribute('value');
     profileName.textContent = inputName.value;
-    profileJob.textContent = inputJob.value
+    profileJob.textContent = inputJob.value;
     popupClose();
 }
 

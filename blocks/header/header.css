@@ -1,5 +1,4 @@
 @import url(./__logo/header__logo.css);
-@import url(./__line/header__line.css);
 
 .header {
     min-height: 74px;
@@ -11,7 +10,7 @@
 
 @media screen and (max-width: 400px) {
     .header {
-        max-width: 324px;
+        max-width: 320px;
         min-height: 31.6px;
         padding-top: 28px;
         justify-content: flex-start;
