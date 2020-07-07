@@ -7,3 +7,7 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/popup/_type/popup_type_add.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__img-container/popup__img-container.css);
+@import url(../blocks/elements/__card-like/_active/elements__card-like_active.css);

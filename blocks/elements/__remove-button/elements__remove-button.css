@@ -1,0 +1,23 @@
+.elements__remove-button {
+    background: url(../../../images/Basket.png);
+    position: absolute;
+    border: none;
+    width: 18px;
+    height: 19px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 15px;
+    margin-top: 18px;
+    margin-left: 249px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.elements__remove-button:hover {
+    opacity: .6;
+}
+
+.elements__remove-button:focus  {
+    outline: none;
+}   

@@ -8,6 +8,7 @@
     align-self: center;
     margin-top: 5px;
     border: 1px solid #fff;
+    transition: opacity 0.3s ease-in;
 }
 
 .profile__button-edit:hover {
