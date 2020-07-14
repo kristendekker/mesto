@@ -106,7 +106,7 @@ togglePopup(popupImg);
     return element;
 }
 
-addPopupSave.addEventListener('sumbit', e => {
+addPopupSave.addEventListener('submit', e => {
     e.preventDefault();
     const item = {
         name: inputTitle.value,
