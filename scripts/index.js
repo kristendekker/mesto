@@ -123,7 +123,6 @@ addButtonOpen.addEventListener('click', () => {
 });
 
 addPopupClose.addEventListener('click', () => togglePopup(addPopup));
-addPopupSave.addEventListener('sumbit', addPopupSave);
 popupCloseImg.addEventListener('click', () => togglePopup(popupImg));
 
 initialCards.forEach(item => {
