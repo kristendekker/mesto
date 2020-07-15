@@ -1,12 +1,12 @@
 //элементы первого попапа//
-let buttonOpen = document.querySelector('.profile__button-edit');
-let buttonClose = document.querySelector('.popup__close');
-let popup = document.querySelector('.popup');
-let inputName = popup.querySelector('.popup__input_type_name');
-let inputJob = popup.querySelector('.popup__input_type_job');
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__profession');
-let buttonSave = popup.querySelector('.popup__container');
+const buttonOpen = document.querySelector('.profile__button-edit');
+const buttonClose = document.querySelector('.popup__close');
+const popup = document.querySelector('.popup');
+const inputName = popup.querySelector('.popup__input_type_name');
+const inputJob = popup.querySelector('.popup__input_type_job');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__profession');
+const profileForm = popup.querySelector('.popup__container');
 //элементы второго попапа
 const addButtonOpen = document.querySelector('.profile__button-add');
 const addPopup = document.querySelector('.popup_type_add');
@@ -59,7 +59,7 @@ buttonClose.addEventListener('click', function() {
     togglePopup(popup);
 })
 
-function formSubmitHandler (evt) {
+function formProfileSubmitHandler (evt) {
     evt.preventDefault(); 
     profileName.textContent = inputName.value;
     profileJob.textContent = inputJob.value;
@@ -67,7 +67,7 @@ function formSubmitHandler (evt) {
 }
 
 buttonOpen.addEventListener('click', () => togglePopup(popup));
-buttonSave.addEventListener('submit', formSubmitHandler);
+profileForm.addEventListener('submit', formProfileSubmitHandler);
 
 
 //функция удаления карточек
@@ -88,20 +88,20 @@ const elements = document.querySelector('.elements');
 // функция создания карточек
 function createCard(item) {
 // получаем содержимое template
-const elementTemplate = document.querySelector('#elements').content;
+    const elementTemplate = document.querySelector('#elements').content;
 // клонируем содержимое тега template
-const element = elementTemplate.cloneNode(true);
+    const element = elementTemplate.cloneNode(true);
 // наполняем содержимым карточку
     element.querySelector('.elements__card-name').textContent = item.name;
     element.querySelector('.elements__card-image').src = item.link;
     element.querySelector('.elements__remove-button').addEventListener("click", deleteButton);
     element.querySelector('.elements__card-like').addEventListener('click', likeElement);
-const elementPicture = element.querySelector('.elements__card-image');
-const elementText = element.querySelector('.elements__card-name');
+    const elementPicture = element.querySelector('.elements__card-image');
+    const elementText = element.querySelector('.elements__card-name');
 elementPicture.addEventListener('click', function (event) {
     popupImage.src = elementPicture.src;
     popupCaption.textContent = elementText.textContent;
-togglePopup(popupImg);
+    togglePopup(popupImg);
 });
     return element;
 }
@@ -111,7 +111,7 @@ addPopupSave.addEventListener('submit', e => {
     const item = {
         name: inputTitle.value,
         link: inputLink.value
-};
+    };
     const card = createCard(item);
     addCard(card);
     togglePopup(addPopup);    
