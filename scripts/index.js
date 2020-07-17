@@ -49,13 +49,27 @@ const initialCards = [
     }
 ];
 
+// включение валидации вызовом enableValidation
+const validationParams = {
+    formElement: '.popup__container',
+    inputElement: '.popup__input',
+    buttonElement: '.popup__button',    
+    inactiveButtonClass: 'popup__button_type_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorShowClass: 'popup__error_type_active',
+    controlSelectorClass: '.popup__control',
+    errorClass: '.popup__error'
+};
+
 //открытие модального окна
 function togglePopup(popup) {
     popup.classList.toggle('popup_opened');
+    document.addEventListener('keydown', closePopupByEsc);
 }
 
 //закрытие модального окна 
 buttonClose.addEventListener('click', function() {
+    document.removeEventListener('keydown', closePopupByEsc);
     togglePopup(popup);
 })
 
@@ -98,12 +112,26 @@ function createCard(item) {
     element.querySelector('.elements__card-like').addEventListener('click', likeElement);
     const elementPicture = element.querySelector('.elements__card-image');
     const elementText = element.querySelector('.elements__card-name');
-elementPicture.addEventListener('click', function (event) {
+    elementPicture.addEventListener('click', function (event) {
     popupImage.src = elementPicture.src;
     popupCaption.textContent = elementText.textContent;
     togglePopup(popupImg);
-});
+    });
     return element;
+}
+
+function closePopupByOverlay(event) {
+    const currentPopup = document.querySelector('.popup_opened');
+    if (currentPopup && event.target === event.currentTarget) { 
+        togglePopup(currentPopup); 
+    }
+}
+
+function closePopupByEsc(event) {
+    const currentPopup = document.querySelector('.popup_opened');
+    if (currentPopup && event.key === 'Escape') { 
+        togglePopup(currentPopup);
+    }
 }
 
 addPopupSave.addEventListener('submit', e => {
@@ -119,11 +147,16 @@ addPopupSave.addEventListener('submit', e => {
 
 addButtonOpen.addEventListener('click', () => {
     addPopupSave.reset();
+    popupErrorUpdate(addPopupSave);
+    updateFormButtonState(addPopupSave, validationParams);
     togglePopup(addPopup);
 });
 
 addPopupClose.addEventListener('click', () => togglePopup(addPopup));
 popupCloseImg.addEventListener('click', () => togglePopup(popupImg));
+addPopup.addEventListener('mousedown', closePopupByOverlay);
+popup.addEventListener('mousedown', closePopupByOverlay);
+popupImg.addEventListener('mousedown', closePopupByOverlay);
 
 initialCards.forEach(item => {
     const card = createCard(item);

@@ -26,21 +26,36 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <section class="popup">
-            <form class="popup__container" name="profile">
+            <form class="popup__container" name="profile" novalidate>
             <button type="button" class="popup__close"></button> 
             <h2 class="popup__title">Редактировать профиль</h2>
-                <input type="text" name="Name" class="popup__input popup__input_type_name" required="" placeholder="Имя">
-                <input type="text" name="Job" class="popup__input popup__input_type_job" required="" placeholder="О себе">
-                <button type="submit" class="popup__button">Сохранить</button>
+            <label class="popup__control">
+                <input type="text" name="Name" class="popup__input popup__input_type_name" placeholder="Имя" minlength="2" maxlength="20"
+                pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
+                <span class="popup__error"></span>
+            </label>
+            <label class="popup__control">
+                <input type="text" name="Job" class="popup__input popup__input_type_job" placeholder="О себе" minlength="2" maxlength="200"
+                pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
+                <span class="popup__error"></span>
+            </label>
+                <input class="popup__button popup__button_type_disabled" type="submit" value="Сохранить" name="submit" disabled="disabled">
             </form>
     </section>
     <section class="popup popup_type_add">
-            <form class="popup__container" name="new-place">
+            <form class="popup__container" name="new-place" novalidate>
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Новое место</h2>
-                <input type="text" name="title" class="popup__input popup__input_type_name" required="" placeholder="Название">
-                <input type="text" name="link" class="popup__input popup__input_type_job" required="" placeholder="Ссылка на картинку">
-                <button type="submit" class="popup__button">Сохранить</button>
+            <label class="popup__control">
+                <input type="text" name="title" class="popup__input popup__input_type_name" placeholder="Название" minlength="1" maxlength="30"
+                pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
+                <span class="popup__error"></span>
+            </label>
+            <label class="popup__control">
+                <input type="url" name="link" class="popup__input popup__input_type_job" placeholder="Ссылка на картинку" required>
+                <span class="popup__error"></span>
+            </label>
+                <input class="popup__button popup__button_type_disabled" type="submit" value="Сохранить" name="submit" disabled="disabled">
             </form>
     </section>
     <section class="popup popup__img">
@@ -63,5 +78,6 @@
         </li>
     </template>
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
 </body>
 </html>
