@@ -20,7 +20,10 @@
     </div>
     <button type="button" class="profile__button-add"></button>
     </section>
-    <ul class="elements"></ul>
+    <section class="elements">
+        <ul class="elements__card-list">
+        </ul>
+    </section>
 </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
@@ -30,12 +33,12 @@
             <button type="button" class="popup__close"></button> 
             <h2 class="popup__title">Редактировать профиль</h2>
             <label class="popup__control">
-                <input type="text" name="Name" class="popup__input popup__input_type_name" placeholder="Имя" minlength="2" maxlength="20"
+                <input type="text" name="Name" class="popup__input popup__input_type_name" placeholder="Жак-Ив Кусто" minlength="2" maxlength="20"
                 pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
             <label class="popup__control">
-                <input type="text" name="Job" class="popup__input popup__input_type_job" placeholder="О себе" minlength="2" maxlength="200"
+                <input type="text" name="Job" class="popup__input popup__input_type_job" placeholder="Исследователь океана" minlength="2" maxlength="200"
                 pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
@@ -58,7 +61,7 @@
                 <input class="popup__button popup__button_type_disabled" type="submit" value="Сохранить" name="submit" disabled="disabled">
             </form>
     </section>
-    <section class="popup popup__img">
+    <section class="popup popup_type_img">
         <form class="popup__img-container">
         <button type="button" class="popup__close"></button>
         <figure class="popup__figure">
@@ -67,10 +70,10 @@
         </figure>    
     </form>
     </section>
-    <template id="elements">
+    <template class="elements-template">
         <li class="elements__card">
             <button type="button" class="elements__remove-button"></button>
-            <img class="elements__card-image" src="#" alt="изображение">
+            <img class="elements__card-image" src="#" alt="">
             <div class="elements__card-description">
                 <p class="elements__card-name"></p>
                 <button type="button" class="elements__card-like"></button>
