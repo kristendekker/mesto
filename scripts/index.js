@@ -81,42 +81,49 @@ function formProfileSubmitHandler (evt) {
     closePopup(popup);
 }
 
+buttonOpen.addEventListener('click', () => {
+    popupErrorUpdate(profileForm);
+    inputName.setAttribute('value', profileName.textContent); 
+    inputJob.setAttribute('value', profileJob.textContent);
+    openPopup(popup); 
+});
+
+
 buttonOpen.addEventListener('click', () => openPopup(popup));
 buttonClose.addEventListener('click', () => closePopup(popup));
 profileForm.addEventListener('submit', formProfileSubmitHandler);
 
-
 //функция удаления карточек
 function deleteButton (e) {
-    const elementsCard = e.target.closest('.elements__card');
+    const elementsCard = e.target.closest('.card');
     elementsCard.remove();
 }
 //лайк карточки
 function likeElement(event) {
-    event.target.classList.toggle('elements__card-like_active');
+    event.target.classList.toggle('card__like_active');
 }
 
 //добавление карточки на страницу
 function addCard(card) {
     elements.prepend(card);
-};
-const elements = document.querySelector('.elements__card-list');
+}
+const elements = document.querySelector('.elements__list');
 // функция создания карточек
 function createCard(item) {
 // получаем содержимое template
-    const elementTemplate = document.querySelector('.elements-template').content;
+    const elementTemplate = document.querySelector('.card-template').content;
 // клонируем содержимое тега template
     const element = elementTemplate.cloneNode(true);
 // наполняем содержимым карточку
-    const elementPicture = element.querySelector('.elements__card-image');
-    const elementText = element.querySelector('.elements__card-name');
+    const elementPicture = element.querySelector('.card__image');
+    const elementText = element.querySelector('.card__name');
     
     elementText.textContent = item.name;
     elementPicture.alt = item.name;
     elementPicture.src = item.link;
 
-    element.querySelector('.elements__remove-button').addEventListener("click", deleteButton);
-    element.querySelector('.elements__card-like').addEventListener('click', likeElement);
+    element.querySelector('.card__remove-button').addEventListener("click", deleteButton);
+    element.querySelector('.card__like').addEventListener('click', likeElement);
     
     elementPicture.addEventListener('click', function (event) {
     popupImage.src = elementPicture.src;
@@ -168,3 +175,5 @@ initialCards.forEach(item => {
     const card = createCard(item);
     addCard(card);
 });
+
+enableValidation(validationParams);

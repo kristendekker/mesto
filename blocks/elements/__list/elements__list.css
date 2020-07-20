@@ -1,4 +1,4 @@
-.elements__card-list {
+.elements__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 282px);
     grid-gap: 21px 18px;

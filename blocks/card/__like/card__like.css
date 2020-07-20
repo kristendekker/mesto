@@ -1,4 +1,4 @@
-.elements__card-like {
+.card__like {
     background-image: url('../../../images/heart.svg');
     background-color: #FFFF;
     background-position: center;
@@ -11,10 +11,10 @@
     transition: opacity 0.3s ease-in;
 }
 
-.elements__card-like:hover {
+.card__like:hover {
     opacity: .6;
 }
 
-.elements__card-like:focus  {
+.card__like:focus  {
     outline: none;
 }   

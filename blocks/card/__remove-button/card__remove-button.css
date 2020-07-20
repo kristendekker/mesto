@@ -1,4 +1,4 @@
-.elements__remove-button {
+.card__remove-button {
     background: url(../../../images/Basket.png);
     position: absolute;
     border: none;
@@ -14,10 +14,10 @@
     cursor: pointer;
 }
 
-.elements__remove-button:hover {
+.card__remove-button:hover {
     opacity: .6;
 }
 
-.elements__remove-button:focus  {
+.card__remove-button:focus  {
     outline: none;
 }   

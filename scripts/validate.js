@@ -41,6 +41,7 @@ const setEventListeners = (formElement, validationParams) => {
     const inputList = Array.from(formElement.querySelectorAll(validationParams.inputElement)); 
     const buttonElement = formElement.querySelector(validationParams.buttonElement);
     
+        
     inputList.forEach((inputElement) => { 
         inputElement.addEventListener('input', () => { 
             checkInputValidity(inputElement, validationParams); 
@@ -51,7 +52,7 @@ const setEventListeners = (formElement, validationParams) => {
 
 function popupErrorUpdate(formElement) {
     const inputsArray = Array.from(formElement.querySelectorAll('.popup__input'));
-
+    
     inputsArray.forEach((inputElement) => {
         hideInputError(inputElement, validationParams);
     });
@@ -73,7 +74,7 @@ const enableValidation = (validationParams) => {
 
         formElement.addEventListener('submit', (event) => {
             event.preventDefault();
-        });    
+        });  
     });
 };
-enableValidation(validationParams);
+

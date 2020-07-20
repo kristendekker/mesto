@@ -1,4 +1,4 @@
-.elements__card-description {
+.card__description {
     min-height: 75px;
     display: flex;
     justify-content: space-between;

@@ -1,11 +1,4 @@
-@import url(./__card-list/elements__card-list.css);
-@import url(./__card/elements__card.css);
-@import url(./__card-image/elements__card-image.css);
-@import url(./__card-description/elements__card-description.css);
-@import url(./__card-name/elements__card-name.css);
-@import url(./__card-like/elements__card-like.css);
-@import url(./__card-like/_active/elements__card-like_active.css);
-@import url(./__remove-button/elements__remove-button.css);
+@import url(./__list/elements__list.css);
 
 .elements {
     max-width: 882px;
