@@ -1,4 +1,4 @@
-import { openPopup, popupImg, popupImage, popupCaption } from '../scripts/utils.js';
+import { openPopup, popupImg, popupImage, popupCaption } from './utils.js';
 
 // класс карточки
 export default class Card {
@@ -21,12 +21,13 @@ export default class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        const elementPicture = this._element.querySelector('.card__image');
+        this._image = this._element.querySelector('.card__image');
+        this._like = this._element.querySelector('.card__like');
         this._setEventListeners();
 
         this._element.querySelector('.card__name').textContent = this._name;
-        elementPicture.src = this._link;
-        elementPicture.alt = this._name;
+        this._image.src = this._link;
+        this._image.alt = this._name;
 
         return this._element;
     }
@@ -40,7 +41,7 @@ export default class Card {
 
 // приватный метод для обработки лайка
     _likeElement() {
-        this._element.querySelector('.card__like').classList.toggle('card__like_active');
+        this._like.classList.toggle('card__like_active');
     }
 
     _deleteButton() {
@@ -50,9 +51,9 @@ export default class Card {
 
 // приватный метод расстановки обработчиков
     _setEventListeners() {
-        this._element.querySelector('.card__image').addEventListener('click', () => this._handleOpenPopup());
+        this._image.addEventListener('click', () => this._handleOpenPopup());
         
         this._element.querySelector('.card__remove-button').addEventListener('click', () => this._deleteButton());
-        this._element.querySelector('.card__like').addEventListener('click', () => this._likeElement());
+        this._like.addEventListener('click', () => this._likeElement());
     }
 }

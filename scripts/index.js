@@ -1,7 +1,7 @@
-import Card from '../scripts/Card.js';
-import FormValidator from '../scripts/FormValidator.js';
-import { initialCards } from '../scripts/cards.js';
-import { openPopup, closePopup, closePopupByEscOrOverlay, popupImg, popupImage, popupCaption, popupCloseImg } from '../scripts/utils.js';
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+import { initialCards } from './cards.js';
+import { openPopup, closePopup, closePopupByEscOrOverlay, popupImg, popupImage, popupCaption, popupCloseImg } from './utils.js';
 
 //элементы первого попапа//
 const buttonOpen = document.querySelector('.profile__button-edit');
