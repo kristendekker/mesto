@@ -1,10 +1,9 @@
-import { openPopup, popupImg, popupImage, popupCaption } from './utils.js';
-
 // класс карточки
 export default class Card {
-    constructor(data, cardSelector) {
+    constructor(data, handleCardClick, cardSelector) {
         this._name = data.name;
         this._link = data.link;
+        this._handleCardClick = handleCardClick;
         this._cardSelector = cardSelector;
     }
 
@@ -32,13 +31,6 @@ export default class Card {
         return this._element;
     }
 
-    _handleOpenPopup() {
-        popupImage.src = this._link;
-        popupImage.alt = this._name;
-        popupCaption.textContent = this._name;
-        openPopup(popupImg);
-    }
-
 // приватный метод для обработки лайка
     _likeElement() {
         this._like.classList.toggle('card__like_active');
@@ -51,7 +43,7 @@ export default class Card {
 
 // приватный метод расстановки обработчиков
     _setEventListeners() {
-        this._image.addEventListener('click', () => this._handleOpenPopup());
+        this._image.addEventListener('click', () => this._handleCardClick());
         
         this._element.querySelector('.card__remove-button').addEventListener('click', () => this._deleteButton());
         this._like.addEventListener('click', () => this._likeElement());
