@@ -21,10 +21,6 @@ const validationParams = {
     errorClass: '.popup__error'
 };
 
-function handleCardClick() {
-    popupTypeImg.open();
-}
-
 const validEdit = new FormValidator(validationParams, profileForm);
 validEdit.enableValidation();
 
@@ -40,7 +36,13 @@ const userInfo = user.getUserInfo();
 const cardsList = new Section({
     items: initialCards,
     renderer: (item) => {
-        const card = new Card(item, handleCardClick, cardTemplateSelector);
+        const card = new Card(
+            item,
+            () => {
+            popupTypeImg.open(item)
+            },
+        cardTemplateSelector
+    )
         const cardElement = card.generateCard();
         cardsList.addItem(cardElement);
     },
@@ -51,7 +53,11 @@ cardsList.renderItems();
 const popupTypeAdd = new PopupWIthForm({
     popupSelector: '.popup_type_add',
     handleFormSubmit: (item) => {
-        const userCard = new Card(item, handleCardClick, cardTemplateSelector);
+        const userCard = new Card(item, 
+            () => {
+            popupTypeImg.open(item) 
+            },
+            cardTemplateSelector);
         const cardElement = userCard.generateCard();
         cardsList.addItem(cardElement);
         popupTypeAdd.close();

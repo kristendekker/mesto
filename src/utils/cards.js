@@ -5,6 +5,8 @@ import Kamchatka from '../images/kamchatka.jpg';
 import Kholmogor from '../images/kholmogor.jpg';
 import Baikal from '../images/baikal.jpg';
 
+const ESC_CODE = 'Escape';
+
 
 // Шесть карточек «из коробки»
 export const initialCards = [
