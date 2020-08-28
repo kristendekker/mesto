@@ -8,6 +8,7 @@
     overflow: hidden;
     padding: 0;
     border: 0;
+    background-size: cover;
 }
 
 .profile__avatar-button::after {

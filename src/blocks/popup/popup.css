@@ -5,6 +5,7 @@
 @import url(./__input/_type/popup__input_type_job.css);
 @import url(./__button/popup__button.css);
 @import url(./__button/_type/popup__button_type_disabled.css);
+@import url(./__button/_type/popup__button_type_save.css.css);
 @import url(./_type/popup_type_add.css);
 @import url(./_type/popup_type_img.css);
 @import url(./__img-container/popup__img-container.css);

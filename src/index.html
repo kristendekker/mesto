@@ -14,13 +14,13 @@
     <div>
         <button type="button" class="profile__avatar-button">
         <img src="./images/pen.svg" class="profile__avatar-icon">
-        <img class="profile__avatar" alt="Аватар профиля">
+        <div class="profile__avatar"></div>
         </button>
     </div>
     <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <h1 class="profile__name"></h1>
     <button type="button" class="profile__button-edit"></button>
-        <p class="profile__profession">Исследователь океана</p>
+        <p class="profile__profession"></p>
     </div>
     <button type="button" class="profile__button-add"></button>
     </section>
@@ -33,20 +33,20 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <section class="popup">
-            <form class="popup__container" name="profile" novalidate>
+            <form class="popup__container" name="redact" novalidate>
             <button type="button" class="popup__close"></button> 
             <h2 class="popup__title">Редактировать профиль</h2>
             <label class="popup__control">
-                <input type="text" name="user" class="popup__input popup__input_type_name" placeholder="Жак-Ив Кусто" minlength="2" maxlength="20"
+                <input type="text" name="name" class="popup__input popup__input_type_name" minlength="2" maxlength="20"
                 pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
             <label class="popup__control">
-                <input type="text" name="info" class="popup__input popup__input_type_job" placeholder="Исследователь океана" minlength="2" maxlength="200"
+                <input type="text" name="about" class="popup__input popup__input_type_job" minlength="2" maxlength="200"
                 pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
-                <input class="popup__button" type="submit" value="Сохранение" name="submit">
+                <input class="popup__button popup__button_type_save" type="submit" value="Сохранение" name="submit">
             </form>
     </section>
     <section class="popup popup_type_add">
@@ -62,7 +62,7 @@
                 <input type="url" name="link" class="popup__input popup__input_type_job" placeholder="Ссылка на картинку" required>
                 <span class="popup__error"></span>
             </label>
-                <input class="popup__button" type="submit" value="Сохранение" name="submit">
+                <input class="popup__button popup__button_type_save" type="submit" value="Сохранение" name="submit">
             </form>
     </section>
     <section class="popup popup_type_img">
@@ -75,7 +75,7 @@
     </form>
     </section>
     <section class="popup popup_type_confirm">
-        <form class="popup__container" name="prevent-confirm" novalidate>
+        <form class="popup__container" name="form-confirm" novalidate>
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Вы уверены?</h2>
                 <input class="popup__button" type="submit" value="Да" name="submit">
@@ -89,7 +89,7 @@
                 <input class="popup__input popup__input_type_avatar" type="url" name="avatar" placeholder="Ссылка на картинку" required>
                 <span class="popup__error"></span>
             </label>
-            <input class="popup__button" type="submit" value="Сохранить" name="submit">
+            <input class="popup__button popup__button_type_save" type="submit" value="Сохранить" name="submit">
         </form>
     </section>
     <template class="card-template">
@@ -98,8 +98,10 @@
             <img class="card__image" src="#" alt="">
             <div class="card__description">
                 <p class="card__name"></p>
+            <div class="card__like-cover">
                 <button type="button" class="card__like"></button>
                 <span class="card__like-counter"></span>
+                </div>
             </div>
         </li>
     </template>

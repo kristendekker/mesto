@@ -8,7 +8,7 @@ export default class Api {
 // обработка ответа с сервера
 
     getUserInfo() {
-        return fetch(`${this.baseUrl}cards`, { 
+        return fetch(`${this.baseUrl}users/me`, { 
             headers: this.headers,
         })
         .then(res => {
@@ -32,6 +32,7 @@ export default class Api {
     }
 
     setUserInfo(item) {
+        console.log(item); 
         return fetch(`${this.baseUrl}users/me`, {
             method: 'PATCH',
             headers: this.headers,

@@ -1,6 +1,6 @@
 // класс карточки
 export default class Card {
-    constructor(data, handleCardClick, { handleLikeClick, handleCardDelete }, currentId, cardSelector) {
+    constructor({data, handleCardClick, handleLikeClick, handleCardDelete }, currentId, cardSelector) {
         this._name = data.name;
         this._link = data.link;
         this._handleCardClick = handleCardClick;
@@ -47,10 +47,6 @@ export default class Card {
         return this._element;
     }
 
-// приватный метод для обработки лайка
-   // _likeElement() {
-      // this._like.classList.toggle('card__like_active');
-    //}
     isLiked() {
         return this._isLiked;
     }
@@ -65,7 +61,7 @@ export default class Card {
         }
     }
 
-    _deleteButton() {
+    deleteCard() {
         this._element.remove();
         this._element = null;
     }

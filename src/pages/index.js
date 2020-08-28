@@ -10,10 +10,6 @@ import Api from '../components/Api.js';
 import { buttonOpen, addButtonOpen, inputName, inputJob, profileForm, addPopupSave, cardTemplateSelector, avatarImg, avatarForm, userName, userAbout, token, url, validationParams, allSavedSubmits } from '../utils/variables.js';
 
 
-//function handleCardClick() {
-    //popupTypePicture.open(item);
-//}
-
 function handleLikeClick(card, data) {
     const promise = card.isLiked() ? api.dislikeCard(data._id) : api.likeCard(data._id);
     promise
@@ -55,12 +51,14 @@ function renderLoading(isLoading) {
 }
 
 function newCardMaker(data, currentUserId, cardsList) {
-    const newCard = new Card({data: item, 
+    const newCard = new Card({
+        data, 
         handleCardClick: () => {
-            popupTypePicture.open(item);
+            popupTypeImg.open(data);
         }, 
         handleLikeClick: () => handleLikeClick(newCard, data),
-        handleCardDelete: () => handleCardDelete(newCard)},
+        handleCardDelete: () => handleCardDelete(newCard)
+    },
         currentUserId, 
         cardTemplateSelector);
     const cardElement = newCard.generateCard();
@@ -88,7 +86,6 @@ const api = new Api({
     }
 });
 
-//let cardList = {};
 
 api.getUserInfo()
 .then((result) => {
@@ -122,8 +119,8 @@ api.getUserInfo()
     
         const userData = user.getUserInfo();
     
-        inputName.value = userData.user;
-        inputJob.value = userData.info;
+        inputName.value = userData.name;
+        inputJob.value = userData.about;
     
         inputName.dispatchEvent(new Event('input'));
         inputJob.dispatchEvent(new Event('input'));
@@ -169,13 +166,7 @@ addButtonOpen.addEventListener('click', () => {
     popupTypeAdd.open();
 });
 
-//const popupTypeEdit = new PopupWIthForm({
-    //popupSelector: '.popup',
-    //handleFormSubmit: (item) => {
-        //user.setUserInfo(item);
-       // popupTypeEdit.close();
-    //}
-//});
+
 const popupTypeAvatar = new PopupWIthForm({
     popupSelector: '.popup_type_avatar',
     handleFormSubmit: (item) => {

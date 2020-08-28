@@ -14,9 +14,9 @@ export const cardTemplateSelector = '.card-template';
 export const userName = document.querySelector('.profile__name');
 export const userAbout = document.querySelector('.profile__profession');
 
-export const allSavedSubmits = document.querySelectorAll('.popup__button');//
+export const allSavedSubmits = document.querySelectorAll('.popup__button_type_save');//
 
-export const avatarImg = document.querySelector('.profile__avatar');//
+export const avatarImg = document.querySelector('.profile__avatar-button');//
 const avatarPopup = document.querySelector('.popup_type_avatar');
 export const avatarForm = avatarPopup.querySelector('.popup__container');
 
