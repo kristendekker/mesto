@@ -91,7 +91,7 @@ api.getUserInfo()
     .then((result) => {
         const user = new UserInfo({ userNameElement: userName, userInfoElement: userAbout, avatar: avatarImg });
         user.setUserInfo(result);
-        avatarImg.style.backgroundImage = `url(${result.avatar})`;
+        user.setUserAvatar(result);
         const currentUserId = result._id;
 
         const popupTypeEdit = new PopupWIthForm({

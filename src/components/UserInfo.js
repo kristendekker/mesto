@@ -22,6 +22,6 @@ export default class UserInfo {
     }
 
     setUserAvatar(data) {
-        this.avatar.style.backgroundImage = `url(${data.avatar})`;
+        this._avatar.style.backgroundImage = `url(${data.avatar})`;
     }
 }
