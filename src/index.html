@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
 </head>
+
 <body class="page">
     <header class="header">
         <img class="header__logo" src="images/header-logo.svg" alt="Логотип">
     </header>
-<main class="content">
-    <section class="profile">
-    <div>
-        <button type="button" class="profile__avatar-button">
-        <img src="./images/pen.svg" class="profile__avatar-icon">
-        <div class="profile__avatar"></div>
-        </button>
-    </div>
-    <div class="profile__info">
-        <h1 class="profile__name"></h1>
-    <button type="button" class="profile__button-edit"></button>
-        <p class="profile__profession"></p>
-    </div>
-    <button type="button" class="profile__button-add"></button>
-    </section>
-    <section class="elements">
-        <ul class="elements__list">
-        </ul>
-    </section>
-</main>
+    <main class="content">
+        <section class="profile">
+            <div>
+                <button type="button" class="profile__avatar-button">
+                    <img src="./images/pen.svg" class="profile__avatar-icon">
+                    <div class="profile__avatar"></div>
+                </button>
+            </div>
+            <div class="profile__info">
+                <h1 class="profile__name"></h1>
+                <button type="button" class="profile__button-edit"></button>
+                <p class="profile__profession"></p>
+            </div>
+            <button type="button" class="profile__button-add"></button>
+        </section>
+        <section class="elements">
+            <ul class="elements__list">
+            </ul>
+        </section>
+    </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <section class="popup">
-            <form class="popup__container" name="redact" novalidate>
-            <button type="button" class="popup__close"></button> 
+        <form class="popup__container" name="redact" novalidate>
+            <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <label class="popup__control">
                 <input type="text" name="name" class="popup__input popup__input_type_name" minlength="2" maxlength="20"
-                pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
+                    pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
             <label class="popup__control">
                 <input type="text" name="about" class="popup__input popup__input_type_job" minlength="2" maxlength="200"
-                pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
+                    pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
-                <input class="popup__button popup__button_type_save" type="submit" value="Сохранение" name="submit">
-            </form>
+            <input class="popup__button popup__button_type_save" type="submit" value="Сохранение" name="submit">
+        </form>
     </section>
     <section class="popup popup_type_add">
-            <form class="popup__container" name="new-place" novalidate>
+        <form class="popup__container" name="new-place" novalidate>
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Новое место</h2>
             <label class="popup__control">
-                <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" minlength="1" maxlength="30"
-                pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
+                <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название"
+                    minlength="1" maxlength="30" pattern="^[A-Za-zA-Яa-яЁё\s\D]+$" required>
                 <span class="popup__error"></span>
             </label>
             <label class="popup__control">
-                <input type="url" name="link" class="popup__input popup__input_type_job" placeholder="Ссылка на картинку" required>
+                <input type="url" name="link" class="popup__input popup__input_type_job"
+                    placeholder="Ссылка на картинку" required>
                 <span class="popup__error"></span>
             </label>
-                <input class="popup__button popup__button_type_save" type="submit" value="Сохранение" name="submit">
-            </form>
+            <input class="popup__button popup__button_type_save" type="submit" value="Сохранение" name="submit">
+        </form>
     </section>
     <section class="popup popup_type_img">
         <form class="popup__img-container">
-        <button type="button" class="popup__close"></button>
-        <figure class="popup__figure">
-            <img class="popup__image" src="#" alt="изображение">
-            <p class="popup__caption"></p>
-        </figure>    
-    </form>
+            <button type="button" class="popup__close"></button>
+            <figure class="popup__figure">
+                <img class="popup__image" src="#" alt="изображение">
+                <p class="popup__caption"></p>
+            </figure>
+        </form>
     </section>
     <section class="popup popup_type_confirm">
         <form class="popup__container" name="form-confirm" novalidate>
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Вы уверены?</h2>
-                <input class="popup__button" type="submit" value="Да" name="submit">
+            <input class="popup__button" type="submit" value="Да" name="submit">
         </form>
     </section>
     <section class="popup popup_type_avatar">
@@ -86,7 +89,8 @@
             <button type="button" class="popup__close"></button>
             <h2 class="popup__title">Обновить аватар</h2>
             <label class="popup__control">
-                <input class="popup__input popup__input_type_avatar" type="url" name="avatar" placeholder="Ссылка на картинку" required>
+                <input class="popup__input popup__input_type_avatar" type="url" name="avatar"
+                    placeholder="Ссылка на картинку" required>
                 <span class="popup__error"></span>
             </label>
             <input class="popup__button popup__button_type_save" type="submit" value="Сохранить" name="submit">
@@ -98,12 +102,13 @@
             <img class="card__image" src="#" alt="">
             <div class="card__description">
                 <p class="card__name"></p>
-            <div class="card__like-cover">
-                <button type="button" class="card__like"></button>
-                <span class="card__like-counter"></span>
+                <div class="card__like-cover">
+                    <button type="button" class="card__like"></button>
+                    <span class="card__like-counter"></span>
                 </div>
             </div>
         </li>
     </template>
 </body>
+
 </html>

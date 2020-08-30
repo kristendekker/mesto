@@ -1,6 +1,6 @@
 // класс карточки
 export default class Card {
-    constructor({data, handleCardClick, handleLikeClick, handleCardDelete }, currentId, cardSelector) {
+    constructor({ data, handleCardClick, handleLikeClick, handleCardDelete }, currentId, cardSelector) {
         this._name = data.name;
         this._link = data.link;
         this._handleCardClick = handleCardClick;
@@ -13,13 +13,13 @@ export default class Card {
         this._handleCardDelete = handleCardDelete;
     }
 
-// приватный метод получения шаблона карточки
+    // приватный метод получения шаблона карточки
     _getTemplate() {
         const cardElement = document
-        .querySelector(this._cardSelector)
-        .content
-        .querySelector('.card')
-        .cloneNode(true);
+            .querySelector(this._cardSelector)
+            .content
+            .querySelector('.card')
+            .cloneNode(true);
 
         return cardElement;
     }
@@ -52,7 +52,7 @@ export default class Card {
     }
 
     setLike(data) {
-        this._isLiked = data.likes.filter((item) => { return item._id == this._currentId; }).length > 0; // проверяем что лайк есть и он мой
+        this._isLiked = data.likes.filter((item) => { return item._id === this._currentId; }).length > 0; // проверяем что лайк есть и он мой
         this._element.querySelector('.card__like-counter').textContent = data.likes.length;
         if (this._isLiked) {
             this._element.querySelector('.card__like').classList.add('card__like_active');
@@ -66,10 +66,10 @@ export default class Card {
         this._element = null;
     }
 
-// приватный метод расстановки обработчиков
+    // приватный метод расстановки обработчиков
     _setEventListeners() {
         this._image.addEventListener('click', () => this._handleCardClick());
-        
+
         this._element.querySelector('.card__remove-button').addEventListener('click', () => this._handleCardDelete());
         this._like.addEventListener('click', () => this._handleLikeClick());
     }

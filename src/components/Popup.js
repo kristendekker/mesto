@@ -16,13 +16,13 @@ export default class Popup {
     }
 
     _handleEscClose = (event) => {
-        if(event.key === 'Escape') {
+        if (event.key === 'Escape') {
             this.close();
         }
     }
 
     _handleOverlayClose = (event) => {
-        if(event.target === event.currentTarget) {
+        if (event.target === event.currentTarget) {
             this.close();
         }
     }

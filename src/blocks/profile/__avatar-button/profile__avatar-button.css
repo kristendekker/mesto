@@ -27,6 +27,10 @@
     background: rgba(0, 0, 0, .8);
 }
 
+.profile__avatar-button:focus {
+    outline: none;
+}
+
 .profile__avatar-button:hover .profile__avatar-icon {
     opacity: 1;
 }
